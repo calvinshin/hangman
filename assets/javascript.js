@@ -1,0 +1,162 @@
+// Word related variables
+var unknownWord = "";
+var secretWord = "efficient";
+var secretWordArray = Array();
+var guessedLettersArray = Array();
+// var onWindow is used to figure out which commands should be valid
+    // onwWindow = "guessing" allows the keypresses to function
+    // onWIndow = "main" allows the main menu to function
+    // onWindow = "choosing" allows the user to select which library of words to use
+var onWindow = "guessing";
+
+
+// Sound variables
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Need to make it so that when mutepage is true, mutesfx is false/etc. Currently set up in the function call.
+var muteBGM = true;
+var muteSFX = false;
+
+var missedSound = new Audio("assets/sounds/attempt.mp3");
+var successSound = new Audio("assets/sounds/Poke_Caught.wav");
+var bGM = new Audio("assets/sounds/107 - battle (vs wild pokemon).mp3");
+
+function play(sound) {
+    if (muteSFX === false) {
+        sound.play();
+    }
+    // if (muteBGM === false) {
+    //     sound.play()
+    // }
+}
+
+//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Took the words from someone else on how to build mute/unmute.
+// https://stackoverflow.com/questions/14044761/how-to-mute-all-sound-in-a-page-with-js
+                                            // // Mute a singular HTML5 element
+                                            // function muteMe(elem) {
+                                            //     elem.muted = true;
+                                            //     elem.pause();
+                                            // }
+
+                                            // // Try to mute all video and audio elements on the page
+                                            // function mutePage() {
+                                            //     var elems = document.querySelectorAll("video, audio");
+
+                                            //     [].forEach.call(elems, function(elem) { muteMe(elem); });
+                                            // }
+
+// Game mechanic variables
+// wanted to create concept of multiple lives (before game is over)
+var lives = 3;
+// guesses for pokemon
+var guesses = 10;
+
+// Setting how blurred the image is for catching the pokemon.
+// Easy = see the sprite
+// Medium = silhouette, grayscale
+// Hard = blurred silhouette
+// Master = nothing shown of image (blank)
+var difficulty = "medium";
+
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~ using keypress to change the class of all the things
+// ~~~~~~~~~~~~~~~~~~~~~~~~ can also remove on multiple elements even if it doesn't work. Need to do this when updating class of the used letters.
+// document.getElementById(secretWord).classList.add("teststyle")
+// document.getElementById(secretWord).classList.remove("teststyle")
+// document.getElementById(secretWord).classList.remove("teststyle")
+
+function arrayify(secretWord) {
+    // Clear any used variables... could be pulled out as its own function
+    guessedLettersArray = Array();
+
+    // Core function of arrayify that creates an array from the secret word
+    // Also creates the unknown word at the same time (for a single for loop)
+    secretWordArray = [secretWord[0]];
+    unknownWord = "-";
+    for (i=1; i < secretWord.length; i++) {
+        secretWordArray.push(secretWord[i]);
+        unknownWord = "-" + unknownWord;
+        // console.log(secretWordArray);
+    };
+    console.log(secretWordArray);
+    console.log(unknownWord);
+}
+console.log("secret word array " + secretWordArray)
+console.log("secret word length " + secretWord.length)
+console.log("guessed letters " + guessedLettersArray.length)
+arrayify(secretWord)
+
+// Doing a keypress.
+document.onkeydown = function(keypress) {
+    // This should only happen when the hangman guessing rounds are happening. variable of isGuessing = TRUE should be added here.
+    if(keypress.which <= 90 && keypress.which >= 65) {
+        console.log(keypress.key + " was pressed")
+        // checks if the letter is new or was already pressed in the round
+        if(guessedLettersArray.indexOf(keypress.key) === -1) {
+            // Checks for if the key is in the array
+            if(secretWordArray.indexOf(keypress.key) === -1) {
+                console.log("This character was not found!")
+                play(missedSound)
+            }
+            else{
+                // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Need to add what to do if the character is found
+                console.log("This character was found!");
+                // replace the dash with a letter
+                for (letter = 0; letter<unknownWord.length; letter++) {
+                    console.log(letter)
+                    console.log(secretWord[letter]===keypress.key)
+                    if(secretWord[letter]===keypress.key) {
+                        console.log(unknownWord[letter] + " " + keypress.key)
+                        // replace doesn't actually replace the string UNLESS it is re-set as the variable. Nothing happens unkown the unknownWord = is at the front
+                        unknownWord = unknownWord.substring(0, letter) + keypress.key + unknownWord.substring(letter+1)
+                        console.log(unknownWord)
+                    }
+                }
+                // Update the value of the unknownWord on the document screen
+                document.getElementById("unknownWord").innerHTML = unknownWord;
+                // ~~~~~~~~~~~~~~~~~~~~~ Gotta check if the word is completely solved or not
+                if(unknownWord.indexOf("-") === -1) {
+                    document.getElementById("win").innerHTML = "You win!";
+                    document.getElementById("win").classList.remove("hidden");
+                    play(successSound);
+                }
+            }
+            // After checking for the letter, the guessedLettersArray is appended
+            // Checks if array is blank
+            if(guessedLettersArray.length === 0) {
+                guessedLettersArray = Array(keypress.key);
+            }
+            // adds new values if the array is not blank
+            else {
+                guessedLettersArray.push(keypress.key)
+            }
+            // ~~~~~~ currently displays all the guessedLetters in an array. Not necessary later iff
+            // ~~~~~~~~~~~~~~~~~~ The classes of the displayed letters on the screen should be changed.
+            document.getElementById("guessedLettersArray").innerHTML = guessedLettersArray;
+            console.log(guessedLettersArray)
+        }
+        else {
+            console.log("This character was already pressed!")
+        }
+    }
+}
+
+
+
+// Core of game elements:::
+// if onWindow is true, clicking enter, n, or the button leads to the next page
+
+// if on 
+
+
+
+
+
+// Game Start
+function gameStart() {
+// Test of setup of the core elements of the game
+document.getElementById("unknownWord").innerHTML = unknownWord;
+}
+
+document.getElementById("unknownWord").innerHTML = unknownWord;
+
+gameStart()
