@@ -3,6 +3,11 @@ var unknownWord = "";
 var secretWord = "efficient";
 var secretWordArray = Array();
 var guessedLettersArray = Array();
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~ OH GOD THERE IS AN ISSUE WITH CAPITALIZED LETTERS.
+var entireArray = ["pikachu", "rattatta", "squirtle", "charmander", "mew"];
+var currentArray = entireArray;
+var otherArray = ["test", "two"];
+
 // var onWindow is used to figure out which commands should be valid
     // onwWindow = "guessing" allows the keypresses to function
     // onWIndow = "main" allows the main menu to function
@@ -64,10 +69,23 @@ var difficulty = "medium";
 // document.getElementById(secretWord).classList.remove("teststyle")
 // document.getElementById(secretWord).classList.remove("teststyle")
 
-function arrayify(secretWord) {
-    // Clear any used variables... could be pulled out as its own function
-    guessedLettersArray = Array();
+function newGame() {
+    console.log("This tests that the newGame button works");
+    // Hides the you win!
+    document.getElementById("win").classList.add("hidden");
+    // Set the first value in entireArray as the secret word
+    secretWord = currentArray[0];
+    // Remove the first value in the array
+    currentArray.shift();
+    arrayify(secretWord);
+    // Tests shifting the array as this will be possible with the different word lists; looks to work correctly.
+    // currentArray = otherArray;
+};
 
+function arrayify(secretWord) {
+    // Clear guessedLettersArray
+    guessedLettersArray = Array();
+    document.getElementById("guessedLettersArray").innerHTML = guessedLettersArray;
     // Core function of arrayify that creates an array from the secret word
     // Also creates the unknown word at the same time (for a single for loop)
     secretWordArray = [secretWord[0]];
@@ -77,6 +95,7 @@ function arrayify(secretWord) {
         unknownWord = "-" + unknownWord;
         // console.log(secretWordArray);
     };
+    document.getElementById("unknownWord").innerHTML = unknownWord;
     console.log(secretWordArray);
     console.log(unknownWord);
 }
@@ -98,7 +117,6 @@ document.onkeydown = function(keypress) {
                 play(missedSound)
             }
             else{
-                // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Need to add what to do if the character is found
                 console.log("This character was found!");
                 // replace the dash with a letter
                 for (letter = 0; letter<unknownWord.length; letter++) {
@@ -113,11 +131,12 @@ document.onkeydown = function(keypress) {
                 }
                 // Update the value of the unknownWord on the document screen
                 document.getElementById("unknownWord").innerHTML = unknownWord;
-                // ~~~~~~~~~~~~~~~~~~~~~ Gotta check if the word is completely solved or not
                 if(unknownWord.indexOf("-") === -1) {
                     document.getElementById("win").innerHTML = "You win!";
                     document.getElementById("win").classList.remove("hidden");
                     play(successSound);
+                    // Show button that says play again?
+                    // If that button is pressed, call the newGame function
                 }
             }
             // After checking for the letter, the guessedLettersArray is appended
@@ -155,8 +174,9 @@ document.onkeydown = function(keypress) {
 function gameStart() {
 // Test of setup of the core elements of the game
 document.getElementById("unknownWord").innerHTML = unknownWord;
+// Should be testing that the
 }
 
-document.getElementById("unknownWord").innerHTML = unknownWord;
+// document.getElementById("unknownWord").innerHTML = unknownWord;
 
 gameStart()
