@@ -25,7 +25,11 @@ var successSound = new Audio("assets/sounds/Poke_Caught.wav");
 var bGM = new Audio("assets/sounds/107 - battle (vs wild pokemon).mp3");
 
 function play(sound) {
+    console.log("sound", sound)
+    console.log("missedSound", [missedSound])
+    // Need to do the sound.src and match them together;
     if (muteSFX === false) {
+
         sound.play();
     }
     // if (muteBGM === false) {
@@ -60,6 +64,7 @@ var guesses = 10;
 // Hard = blurred silhouette
 // Master = nothing shown of image (blank)
 var difficulty = "medium";
+// ~~~~~~~~~~~~~~~~~~~~~~ need to create a list of caught pokemon. If you quit without catching the pokemon, you move the pokemon back into the list and then randomize.
 
 
 
@@ -91,6 +96,7 @@ function arrayify(secretWord) {
     secretWordArray = [secretWord[0]];
     unknownWord = "-";
     for (i=1; i < secretWord.length; i++) {
+        // ~~~~~~~~~~~~~~~~~ THIS SHOULDN'T REMOVE A THIS POINT. ONLY REMOVE WHEN THE POKEMON IS CAUGHT
         secretWordArray.push(secretWord[i]);
         unknownWord = "-" + unknownWord;
         // console.log(secretWordArray);
@@ -99,9 +105,7 @@ function arrayify(secretWord) {
     console.log(secretWordArray);
     console.log(unknownWord);
 }
-console.log("secret word array " + secretWordArray)
-console.log("secret word length " + secretWord.length)
-console.log("guessed letters " + guessedLettersArray.length)
+
 arrayify(secretWord)
 
 // Doing a keypress.
@@ -135,8 +139,9 @@ document.onkeydown = function(keypress) {
                     document.getElementById("win").innerHTML = "You win!";
                     document.getElementById("win").classList.remove("hidden");
                     play(successSound);
-                    // Show button that says play again?
+                    // ~~~~~~~~~~~~~~~~ Show button that says play again?
                     // If that button is pressed, call the newGame function
+                    // ~~~~~~~~~~~~~~~~ When you win, disable guessing. Probably have a disableGuessing variable
                 }
             }
             // After checking for the letter, the guessedLettersArray is appended
