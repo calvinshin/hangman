@@ -7,13 +7,14 @@ var guessedLettersArray = Array();
 var entireArray = ["pikachu", "rattatta", "squirtle", "charmander", "mew"];
 var currentArray = entireArray;
 var otherArray = ["test", "two"];
+var pokemonNumber = 0;
 
 // var onWindow is used to figure out which commands should be valid
     // onwWindow = "guessing" allows the keypresses to function
     // onWIndow = "main" allows the main menu to function
     // onWindow = "choosing" allows the user to select which library of words to use
 var onWindow = "guessing";
-
+var isGuessingEnabled = false;
 
 // Sound variables
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Need to make it so that when mutepage is true, mutesfx is false/etc. Currently set up in the function call.
@@ -22,6 +23,7 @@ var muteSFX = false;
 
 var missedSound = new Audio("assets/sounds/attempt.mp3");
 var successSound = new Audio("assets/sounds/Poke_Caught.wav");
+var completeSound = new Audio("assets/sounds/DexSound8.wav");
 var bGM = new Audio("assets/sounds/107 - battle (vs wild pokemon).mp3");
 
 function play(sound) {
@@ -75,16 +77,19 @@ var difficulty = "medium";
 // document.getElementById(secretWord).classList.remove("teststyle")
 
 function newGame() {
-    console.log("This tests that the newGame button works");
+    // console.log("This tests that the newGame button works");
     // Hides the you win!
     document.getElementById("win").classList.add("hidden");
     // Set the first value in entireArray as the secret word
-    secretWord = currentArray[0];
-    // Remove the first value in the array
-    currentArray.shift();
+    pokemonNumber = Math.floor(Math.random() * currentArray.length);
+    secretWord = currentArray[pokemonNumber];
     arrayify(secretWord);
     // Tests shifting the array as this will be possible with the different word lists; looks to work correctly.
     // currentArray = otherArray;
+    // Enables guessing
+    isGuessingEnabled = false;
+    console.log("isguessing in newgame" + isGuessingEnabled);
+
 };
 
 function arrayify(secretWord) {
@@ -104,62 +109,79 @@ function arrayify(secretWord) {
     document.getElementById("unknownWord").innerHTML = unknownWord;
     console.log(secretWordArray);
     console.log(unknownWord);
+    console.log("isguessing in arrafify" + isGuessingEnabled);
 }
 
 arrayify(secretWord)
 
 // Doing a keypress.
 document.onkeydown = function(keypress) {
-    // This should only happen when the hangman guessing rounds are happening. variable of isGuessing = TRUE should be added here.
-    if(keypress.which <= 90 && keypress.which >= 65) {
-        console.log(keypress.key + " was pressed")
-        // checks if the letter is new or was already pressed in the round
-        if(guessedLettersArray.indexOf(keypress.key) === -1) {
-            // Checks for if the key is in the array
-            if(secretWordArray.indexOf(keypress.key) === -1) {
-                console.log("This character was not found!")
-                play(missedSound)
-            }
-            else{
-                console.log("This character was found!");
-                // replace the dash with a letter
-                for (letter = 0; letter<unknownWord.length; letter++) {
-                    console.log(letter)
-                    console.log(secretWord[letter]===keypress.key)
-                    if(secretWord[letter]===keypress.key) {
-                        console.log(unknownWord[letter] + " " + keypress.key)
-                        // replace doesn't actually replace the string UNLESS it is re-set as the variable. Nothing happens unkown the unknownWord = is at the front
-                        unknownWord = unknownWord.substring(0, letter) + keypress.key + unknownWord.substring(letter+1)
-                        console.log(unknownWord)
+    // Enables the guessing logic if isGuessingEnabled=True. Otherwise, can't guess!
+    if(isGuessingEnabled = true) {
+        console.log("isGuessing " + isGuessingEnabled)
+        if(keypress.which <= 90 && keypress.which >= 65) {
+            // console.log(keypress.key + " was pressed")
+            // checks if the letter is new or was already pressed in the round
+            if(guessedLettersArray.indexOf(keypress.key) === -1) {
+                // Checks for if the key is in the array
+                if(secretWordArray.indexOf(keypress.key) === -1) {
+                    // console.log("This character was not found!")
+                    play(missedSound)
+                }
+                else{
+                    // console.log("This character was found!");
+                    // replace the dash with a letter
+                    for (letter = 0; letter<unknownWord.length; letter++) {
+                        // console.log(letter)
+                        // console.log(secretWord[letter]===keypress.key)
+                        if(secretWord[letter]===keypress.key) {
+                            // console.log(unknownWord[letter] + " " + keypress.key)
+                            // replace doesn't actually replace the string UNLESS it is re-set as the variable. Nothing happens unkown the unknownWord = is at the front
+                            unknownWord = unknownWord.substring(0, letter) + keypress.key + unknownWord.substring(letter+1)
+                            // console.log(unknownWord)
+                        }
+                    }
+                    // Update the value of the unknownWord on the document screen
+                    document.getElementById("unknownWord").innerHTML = unknownWord;
+                    if(unknownWord.indexOf("-") === -1) {
+                        document.getElementById("win").innerHTML = "You win!";
+                        document.getElementById("win").classList.remove("hidden");
+                        play(successSound);
+                        // Sets guessing to false so no characters can be checked/read.
+                        isGuessingEnabled = false;
+                        console.log("Isguessing " + isGuessingEnabled)
+                        // Remove the pokemon from the array if it exists once caught. 
+                        if(currentArray.indexOf(secretWord) > -1) {
+                            currentArray.splice(pokemonNumber, 1);
+                        };
+                        // Checks whether all of the pokemon in the set was caught.
+                        //  ~~~~~~~ Should disable the new game button from being pressed 
+                        if(currentArray.length === 0) {
+                            play(completeSound);
+                            document.getElementById("win").innerHTML = "You caught all the pokemon! Congratulations, trainer!";
+                        }
+                        // ~~~~~~~~~~~~~~~~ Show button that says play again?
+                        // If that button is pressed, call the newGame function
+                        // ~~~~~~~~~~~~~~~~ When you win, disable guessing. Probably have a disableGuessing variable
                     }
                 }
-                // Update the value of the unknownWord on the document screen
-                document.getElementById("unknownWord").innerHTML = unknownWord;
-                if(unknownWord.indexOf("-") === -1) {
-                    document.getElementById("win").innerHTML = "You win!";
-                    document.getElementById("win").classList.remove("hidden");
-                    play(successSound);
-                    // ~~~~~~~~~~~~~~~~ Show button that says play again?
-                    // If that button is pressed, call the newGame function
-                    // ~~~~~~~~~~~~~~~~ When you win, disable guessing. Probably have a disableGuessing variable
+                // After checking for the letter, the guessedLettersArray is appended
+                // Checks if array is blank
+                if(guessedLettersArray.length === 0) {
+                    guessedLettersArray = Array(keypress.key);
                 }
+                // adds new values if the array is not blank
+                else {
+                    guessedLettersArray.push(keypress.key)
+                }
+                // ~~~~~~ currently displays all the guessedLetters in an array. Not necessary later iff
+                // ~~~~~~~~~~~~~~~~~~ The classes of the displayed letters on the screen should be changed.
+                document.getElementById("guessedLettersArray").innerHTML = guessedLettersArray;
+                console.log(guessedLettersArray)
             }
-            // After checking for the letter, the guessedLettersArray is appended
-            // Checks if array is blank
-            if(guessedLettersArray.length === 0) {
-                guessedLettersArray = Array(keypress.key);
-            }
-            // adds new values if the array is not blank
             else {
-                guessedLettersArray.push(keypress.key)
+                console.log("This character was already pressed!")
             }
-            // ~~~~~~ currently displays all the guessedLetters in an array. Not necessary later iff
-            // ~~~~~~~~~~~~~~~~~~ The classes of the displayed letters on the screen should be changed.
-            document.getElementById("guessedLettersArray").innerHTML = guessedLettersArray;
-            console.log(guessedLettersArray)
-        }
-        else {
-            console.log("This character was already pressed!")
         }
     }
 }
