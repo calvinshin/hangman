@@ -1,0 +1,101 @@
+/* CSS HTML elements */
+body{
+    font-family: 'VT323', monospace;
+    /* background-color: red; */
+}
+
+div{
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    /* background-color: red; */
+}
+/* CSS IDs */
+
+/* Win Window */
+#winwindow {
+    /* centering */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* make it show on top */
+    z-index: 2;
+    /* make it centered */
+    height: 20vh;
+    width: 20vw;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+/* GuessingBattle id styles */
+#guessingBattle {
+    height: 55vh;
+    position: relative;
+    box-sizing: border-box;
+}
+/*  */
+
+    #battleTopLeft{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+        #unknownWord {
+
+        }
+
+    #battleTopRight{
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+    #battleBottomLeft{
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+    }
+    #battleBottomRight{
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+    }
+
+#guessingMenu{
+    height: 30vh;
+    box-sizing: border-box;
+}
+
+    .menuitem {
+        height: 15vh;
+    }
+
+#guessingAlphabet{
+    height: 15vh;
+    box-sizing: border-box;
+}
+
+
+/* CSS generic class styles */
+.teststyle{
+    background-color: yellow;
+}
+.hidden{
+    display: none;
+}
+
+.menuitem{
+    /* font-size:x-large; */
+}
+
+
+.menudetail{
+    font-size:smaller;
+    display: block;
+}
+
+@media (max-width: 500px) {
+    .menudetail{
+        display: none;
+    }
+}

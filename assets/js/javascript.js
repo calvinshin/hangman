@@ -27,8 +27,8 @@ var completeSound = new Audio("assets/sounds/DexSound8.wav");
 var bGM = new Audio("assets/sounds/107 - battle (vs wild pokemon).mp3");
 
 function play(sound) {
-    console.log("sound", sound)
-    console.log("missedSound", [missedSound])
+    // console.log("sound", sound)
+    // console.log("missedSound", [missedSound])
     // Need to do the sound.src and match them together;
     if (muteSFX === false) {
 
@@ -80,6 +80,7 @@ function newGame() {
     // console.log("This tests that the newGame button works");
     // Hides the you win!
     document.getElementById("win").classList.add("hidden");
+    document.getElementById("winwindow").classList.add("hidden");
     // Set the first value in entireArray as the secret word
     pokemonNumber = Math.floor(Math.random() * currentArray.length);
     secretWord = currentArray[pokemonNumber];
@@ -87,8 +88,8 @@ function newGame() {
     // Tests shifting the array as this will be possible with the different word lists; looks to work correctly.
     // currentArray = otherArray;
     // Enables guessing
-    isGuessingEnabled = false;
-    console.log("isguessing in newgame" + isGuessingEnabled);
+    isGuessingEnabled = true;
+    // console.log("isguessing in newgame" + isGuessingEnabled);
 
 };
 
@@ -107,9 +108,9 @@ function arrayify(secretWord) {
         // console.log(secretWordArray);
     };
     document.getElementById("unknownWord").innerHTML = unknownWord;
-    console.log(secretWordArray);
-    console.log(unknownWord);
-    console.log("isguessing in arrafify" + isGuessingEnabled);
+    // console.log(secretWordArray);
+    // console.log(unknownWord);
+    // console.log("isguessing in arrafify" + isGuessingEnabled);
 }
 
 arrayify(secretWord)
@@ -117,8 +118,8 @@ arrayify(secretWord)
 // Doing a keypress.
 document.onkeydown = function(keypress) {
     // Enables the guessing logic if isGuessingEnabled=True. Otherwise, can't guess!
-    if(isGuessingEnabled = true) {
-        console.log("isGuessing " + isGuessingEnabled)
+    if(isGuessingEnabled === true) {
+        // console.log("isGuessing " + isGuessingEnabled)
         if(keypress.which <= 90 && keypress.which >= 65) {
             // console.log(keypress.key + " was pressed")
             // checks if the letter is new or was already pressed in the round
@@ -146,10 +147,11 @@ document.onkeydown = function(keypress) {
                     if(unknownWord.indexOf("-") === -1) {
                         document.getElementById("win").innerHTML = "You win!";
                         document.getElementById("win").classList.remove("hidden");
+                        document.getElementById("winwindow").classList.remove("hidden");
                         play(successSound);
                         // Sets guessing to false so no characters can be checked/read.
                         isGuessingEnabled = false;
-                        console.log("Isguessing " + isGuessingEnabled)
+                        // console.log("Isguessing " + isGuessingEnabled)
                         // Remove the pokemon from the array if it exists once caught. 
                         if(currentArray.indexOf(secretWord) > -1) {
                             currentArray.splice(pokemonNumber, 1);
@@ -177,7 +179,7 @@ document.onkeydown = function(keypress) {
                 // ~~~~~~ currently displays all the guessedLetters in an array. Not necessary later iff
                 // ~~~~~~~~~~~~~~~~~~ The classes of the displayed letters on the screen should be changed.
                 document.getElementById("guessedLettersArray").innerHTML = guessedLettersArray;
-                console.log(guessedLettersArray)
+                // console.log(guessedLettersArray)
             }
             else {
                 console.log("This character was already pressed!")

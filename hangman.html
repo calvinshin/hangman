@@ -4,28 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <!-- <link rel="stylesheet" href="assets/reset.css"> -->
-    <link rel="stylesheet" href="assets/css.css">
+    <title>Pokemon Hangman</title>
+    <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/css.css">
 </head>
 <body>
-    <h1>Test File</h1>
-
 <!-- Should be dynamically creating these... I guess? though it'll be a difficult thing to create it with css styles too... -->
-
-<element id="unknownWord">test file</element>
-<br>
-<element id="guessedLettersArray">Guess some letters!</element>
-
-<p>
-    <element id="efficient" class="">This is test</element>
-<br>
-    <element id="win" class="hidden">This should not be visible</element>
-    <br>
+<div id="winwindow">
     <button onclick="newGame()">New Game</button>
-    <br>
-</p>
+    <element id="win" class="hidden">This should not be visible</element>
+</div>
+<!-- Create a container for playing the game itself-->
+<div id="guessingWindow" class="container">
+    <!-- Create a battlearea section based on wireframe -->
+    <div id="guessingBattle" class="row">
+    <!-- Want to use absolute (or fixed) positioning within the battlearea as practice-->
+        <div id="battleTopLeft">
+            <element id="unknownWord">test file</element>
+        </div>
+        <div id="battleTopRight">
+            <img src="assets/sprites/abra.png">
+        </div>
+        <div id="battleBottomLeft">
+            <img src="assets/otherimages/RS_May_Back.png">
+        </div>
+    
+    </div>
 
-<script src="assets/javascript.js"></script>
+    <!-- Create a guessing menu where all the options appear -->
+    <div id="guessingMenu" class="row">
+    <!-- Want to create a section that says what will you do? -->
+    <!-- Want to do this using columns and rows as practice -->
+        <!-- This is the left side of the guessing menu -->
+        <div class="col-6 p-0">
+            What will you do? 
+            <br>
+            Guessed letters: <element id="guessedLettersArray">Guess some letters!</element>   
+        </div>
+        <!-- This is the right side in two separate columns and rows -->
+        <div class="col-3 p-0">
+            <div class="column menuitem">
+                <element class="h4">Inspect</element>
+                <element class="menudetail">Get a better look</element>
+            </div>
+            <div class="column menuitem">
+                <element class="h4">Bag</element>
+                <element class="menudetail">Reveal a letter</element>
+            </div>
+        </div>
+        <div class="col-3 p-0">
+            <div class="column menuitem">
+                <element class="h4">Options</element>
+                <element class="menudetail">Adjust settings</element>
+            </div>
+            <div class="column menuitem">
+                <element id="rundisplay" class="h4">Run</element>
+                <element class="menudetail">Run and try again</element>
+            </div>
+        </div>
+    
+    </div>
+
+
+    <!-- Create a section where you can click the letters to guess... trigger a keypress on a click of the button -->
+    <div id="guessingAlphabet" class="row">
+        This is where the alphabet will be with dynamically created letters in a certain styled way
+    </div>
+
+</div>
+
+
+<script src="assets/js/javascript.js"></script>
 </body>
 </html>
