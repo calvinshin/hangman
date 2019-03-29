@@ -5,12 +5,19 @@ body{
 }
 
 div{
-    border-color: black;
+    /* border-color: black;
     border-width: 1px;
-    border-style: solid;
+    border-style: solid; */
+    box-sizing: border-box;
+
     /* background-color: red; */
 }
 /* CSS IDs */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 
 /* Win Window */
 #winwindow {
@@ -26,11 +33,15 @@ div{
     width: 20vw;
     background-color: white;
     box-sizing: border-box;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
 }
 
 /* GuessingBattle id styles */
 #guessingBattle {
-    height: 55vh;
+    /* Calculating height minus the border size */
+    height: calc(55vh - 2px);
     position: relative;
     box-sizing: border-box;
 }
@@ -40,39 +51,117 @@ div{
         position: absolute;
         left: 0px;
         top: 0px;
+        height: 50px;
     }
         #unknownWord {
+            position: absolute;
+            left: 10px;
+            top: 0px;
+        }
 
+        #hintblock {
+            position: absolute;
+            right: 10px;
         }
 
     #battleTopRight{
         position: absolute;
         right: 0px;
         top: 0px;
+        z-index: -1;
     }
+
+        #pokemon{
+            width: calc(150px + 10vw);
+            max-width: 250px;
+        }
+
+        /* Classes used to modify pokemon based on difficulty levels */
+
+            .youngster{
+                /* image shown in full */
+            }
+
+            .trainer{
+                filter: grayscale(100%) brightness(0);
+                opacity: 0.8;    
+            }
+
+            .acetrainer{
+                filter: grayscale(100%) brightness(0) blur(8px);
+                opacity: 0.8;    
+            }
+            
+            .champion{
+                /* No image */
+                display: none;
+            }
+
     #battleBottomLeft{
         position: absolute;
-        left: 0px;
+        left: 1vw;
         bottom: 0px;
     }
+
+        #player{
+            width: calc(100px + 10vw);
+            max-width: 200px;
+        }
+        
     #battleBottomRight{
         position: absolute;
         right: 0px;
         bottom: 0px;
+        z-index: 1;
+        /* height: 10vh; */
     }
+
+    /* @media (max-width: 450px) {
+        #battleBottomRight{
+            width: calc(150px + 10vw);
+        }
+    } */
+
+    @media (max-height: 500px) {
+        #pokemon{
+            width: calc(20px + 30vh);
+        }
+        #player{
+            width: calc(30vh);
+        }
+        #whatquestion{
+            margin-bottom: 5px
+        }
+    }
+
 
 #guessingMenu{
     height: 30vh;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
+    word-break: break-word;
+    overflow-wrap: break-word;
+        /* white-space: pre-wrap; */
+        /* display: block; */
+    border-color: gray;
+    border-width: 5px;
+    border-style: ridge;
+    border-radius: 5px;
 }
 
     .menuitem {
         height: 15vh;
+        /* box-sizing: border-box; */
+        padding: 2px;
     }
 
 #guessingAlphabet{
     height: 15vh;
     box-sizing: border-box;
+    border-color: gray;
+    border-width: 5px;
+    border-style: ridge;
+    border-radius: 5px;
+    margin-top: 2px;
 }
 
 
@@ -95,6 +184,12 @@ div{
 }
 
 @media (max-width: 500px) {
+    .menudetail{
+        display: none;
+    }
+}
+
+@media (max-height: 420px) {
     .menudetail{
         display: none;
     }

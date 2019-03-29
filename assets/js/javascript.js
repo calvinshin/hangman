@@ -1,6 +1,6 @@
 // Word related variables
 var unknownWord = "";
-var secretWord = "efficient";
+var secretWord = "";
 var secretWordArray = Array();
 var guessedLettersArray = Array();
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~ OH GOD THERE IS AN ISSUE WITH CAPITALIZED LETTERS.

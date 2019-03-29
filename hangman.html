@@ -21,15 +21,25 @@
     <!-- Create a battlearea section based on wireframe -->
     <div id="guessingBattle" class="row">
     <!-- Want to use absolute (or fixed) positioning within the battlearea as practice-->
-        <div id="battleTopLeft">
-            <element id="unknownWord">test file</element>
+        <div id="battleTopLeft" class="col-5 clearfix">
+            <element id="unknownWord" class="h3">test file</element>
+            <div id="hintblock">
+                Hints: <element id="hints">8</element>
+            </div>
         </div>
         <div id="battleTopRight">
-            <img src="assets/sprites/abra.png">
+            <img src="assets/sprites/abra.png" id="pokemon" class="trainer">
         </div>
         <div id="battleBottomLeft">
-            <img src="assets/otherimages/RS_May_Back.png">
+            <img src="assets/otherimages/RS_May_Back.png" id="player">
         </div>
+        <div id="battleBottomRight" class="col-5">
+            Difficulty: <element id="difficulty">Ace Trainer</element>
+            <br>
+            Pokemon caught: <element id="caught">0</element>
+        </div>
+
+
     
     </div>
 
@@ -39,28 +49,31 @@
     <!-- Want to do this using columns and rows as practice -->
         <!-- This is the left side of the guessing menu -->
         <div class="col-6 p-0">
-            What will you do? 
-            <br>
-            Guessed letters: <element id="guessedLettersArray">Guess some letters!</element>   
+            <div class="m-1">
+                <H2 id="whatquestion">What will you do?</H2>
+                Guessed letters: 
+                <br>
+                <element id="guessedLettersArray">Guess some letters!</element>   
+            </div>
         </div>
         <!-- This is the right side in two separate columns and rows -->
         <div class="col-3 p-0">
             <div class="column menuitem">
-                <element class="h4">Inspect</element>
+                <element class="h3">Inspect</element>
                 <element class="menudetail">Get a better look</element>
             </div>
             <div class="column menuitem">
-                <element class="h4">Bag</element>
+                <element class="h3">Bag</element>
                 <element class="menudetail">Reveal a letter</element>
             </div>
         </div>
         <div class="col-3 p-0">
             <div class="column menuitem">
-                <element class="h4">Options</element>
+                <element class="h3">Options</element>
                 <element class="menudetail">Adjust settings</element>
             </div>
             <div class="column menuitem">
-                <element id="rundisplay" class="h4">Run</element>
+                <element id="rundisplay" class="h3">Run</element>
                 <element class="menudetail">Run and try again</element>
             </div>
         </div>
@@ -69,7 +82,7 @@
 
 
     <!-- Create a section where you can click the letters to guess... trigger a keypress on a click of the button -->
-    <div id="guessingAlphabet" class="row">
+    <div id="guessingAlphabet" class="row p-1">
         This is where the alphabet will be with dynamically created letters in a certain styled way
     </div>
 
