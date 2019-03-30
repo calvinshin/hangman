@@ -12,9 +12,12 @@
 </head>
 <body>
 <!-- Should be dynamically creating these... I guess? though it'll be a difficult thing to create it with css styles too... -->
+<!-- But this is the win/newgame window -->
 <div id="winwindow">
-    <button onclick="newGame()">New Game</button>
-    <element id="win" class="hidden">This should not be visible</element>
+    <button id="newgame" class="btn-lg btn-primary btn-block" onclick="newGame()" >
+        <element id="winMessage" class="">This should not be visible</element>
+    </button>
+        
 </div>
 <!-- Create a container for playing the game itself-->
 <div id="guessingWindow" class="container">
@@ -24,7 +27,7 @@
         <div id="battleTopLeft" class="col-5 clearfix">
             <element id="unknownWord" class="h3">test file</element>
             <div id="hintblock">
-                Hints: <element id="hints">8</element>
+                Hints: <element id="guesses">8</element>
             </div>
         </div>
         <div id="battleTopRight">
@@ -50,7 +53,7 @@
         <!-- This is the left side of the guessing menu -->
         <div class="col-6 p-0">
             <div class="m-1">
-                <H2 id="whatquestion">What will you do?</H2>
+                <H2 id="whatquestion"><br></H2>
                 Guessed letters: 
                 <br>
                 <element id="guessedLettersArray">Guess some letters!</element>   
@@ -58,24 +61,26 @@
         </div>
         <!-- This is the right side in two separate columns and rows -->
         <div class="col-3 p-0">
-            <div class="column menuitem">
-                <element class="h3">Inspect</element>
-                <element class="menudetail">Get a better look</element>
-            </div>
-            <div class="column menuitem">
+            <button class="column menuitem btn btn-primary btn-block m-0 in-line disabled">
+                <!-- <div class="btn btn-primary"> -->
+                    <element class="h3">Inspect</element>
+                    <element class="menudetail">Get a better look</element>
+                <!-- </div> -->
+            </button>
+            <button class="column menuitem btn btn-primary btn-block m-0 in-line disabled">
                 <element class="h3">Bag</element>
                 <element class="menudetail">Reveal a letter</element>
-            </div>
+            </button>
         </div>
         <div class="col-3 p-0">
-            <div class="column menuitem">
+            <button class="column menuitem btn btn-primary btn-block m-0 in-line disabled">
                 <element class="h3">Options</element>
                 <element class="menudetail">Adjust settings</element>
-            </div>
-            <div class="column menuitem">
+            </button>
+            <button id="runButton" class="column menuitem btn btn-primary btn-block m-0 in-line">
                 <element id="rundisplay" class="h3">Run</element>
                 <element class="menudetail">Run and try again</element>
-            </div>
+            </button>
         </div>
     
     </div>

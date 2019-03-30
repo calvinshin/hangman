@@ -25,17 +25,12 @@ div{
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -35%);
     /* make it show on top */
     z-index: 2;
     /* make it centered */
-    height: 20vh;
-    width: 20vw;
-    background-color: white;
+    /* background-color: white; */
     box-sizing: border-box;
-    border-color: black;
-    border-width: 1px;
-    border-style: solid;
 }
 
 /* GuessingBattle id styles */
@@ -51,12 +46,16 @@ div{
         position: absolute;
         left: 0px;
         top: 0px;
-        height: 50px;
+        height: 60px;
+        border-color: #007bff;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 10px 0px;
     }
         #unknownWord {
             position: absolute;
-            left: 10px;
-            top: 0px;
+            left: 13px;
+            top: 10px;
         }
 
         #hintblock {
@@ -148,10 +147,17 @@ div{
     border-radius: 5px;
 }
 
+    .in-line{
+        display:inline-block;
+    }
+
     .menuitem {
-        height: 15vh;
+        height: calc(15vh - 5px);
         /* box-sizing: border-box; */
-        padding: 2px;
+        /* padding: 0px; */
+        margin: 0px;
+        border-radius: 0px;
+        text-align: left;
     }
 
 #guessingAlphabet{
@@ -187,10 +193,41 @@ div{
     .menudetail{
         display: none;
     }
+    #hintblock {
+        bottom: -3px;
+        right: 1px;
+    }
+    .menuitem {
+        padding: 2px;
+    }
+    .h3 {
+        font-size: larger;
+        padding-top: 5px;
+    }
+    h2 {
+        font-size: larger;
+    }
 }
 
+/* At small sizes, the window collapses so the keyboard is larger */
 @media (max-height: 420px) {
     .menudetail{
         display: none;
+    }
+    h2{
+        font-size: larger;
+    }
+    #guessingBattle {
+        /* Calculating height minus the border size */
+        height: calc(50vh - 2px);
+    }
+    #guessingMenu {
+        height: 24vh;
+    }
+    .menuitem {
+        height: calc(12vh - 5px);
+    }
+    #guessingAlphabet {
+        height: 26vh;
     }
 }
