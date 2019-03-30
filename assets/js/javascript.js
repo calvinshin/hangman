@@ -79,7 +79,6 @@ var difficulty = "champion";
 var difficultyImage = difficulty;
 // ~~~~~~~~~~~~~~~~~~~~~~ need to create a list of caught pokemon.
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~ using keypress to change the class of all the things
 // ~~~~~~~~~~~~~~~~~~~~~~~~ can also remove on multiple elements even if it doesn't work. Need to do this when updating class of the used letters.
 // document.getElementById(secretWord).classList.add("teststyle")
 // document.getElementById(secretWord).classList.remove("teststyle")
@@ -102,7 +101,7 @@ function newGame() {
     document.getElementById("guesses").innerHTML = guesses;
     document.getElementById("whatquestion").innerHTML = "What will you do?";
     document.getElementById("pokemon").setAttribute("src", "assets/sprites/"+secretWord+".png");
-    console.log(difficulty)
+    // console.log(difficulty)
     document.getElementById("pokemon").classList.add(difficulty);
     difficultyImage = difficulty;
     for(i=0; i<alphabetArray.length; i++) {
@@ -112,7 +111,7 @@ function newGame() {
     document.getElementById("runButton").classList.remove("disabled");
     // console.log("isguessing in newgame" + isGuessingEnabled);
     play(bGM);
-    console.log("width+ " + document.getElementById("pokemon").naturalWidth)
+    // console.log("width+ " + document.getElementById("pokemon").naturalWidth)
 
 };
 
@@ -178,7 +177,6 @@ function guessing(keyValue) {
                 document.getElementById("winMessage").classList.remove("hidden");
                 document.getElementById("winwindow").classList.remove("hidden");
             }
-            // ~~~~~~~~~~~~~~~~~~~~ IF THE VALUE IS 0, GAME OVER AND A LIFE IS LOST.
         }
         // You found the letter, so the logic is now checked
         else{
@@ -215,14 +213,11 @@ function guessing(keyValue) {
                     currentArray.splice(pokemonNumber, 1);
                 };
                 // Checks whether all of the pokemon in the set was caught.
-                //  ~~~~~~~ Should disable the new game button from being pressed 
                 if(currentArray.length === 0) {
                     play(completeSound);
                     document.getElementById("winMessage").innerHTML = "You caught all the pokemon! Congratulations, trainer!";
                 }
-                // ~~~~~~~~~~~~~~~~ Show button that says play again?
                 // If that button is pressed, call the newGame function
-                // ~~~~~~~~~~~~~~~~ When you win, disable guessing. Probably have a disableGuessing variable
             }
         }
         // After checking for the letter, the guessedLettersArray is appended
@@ -235,11 +230,8 @@ function guessing(keyValue) {
         // else {
             guessedLettersArray.push(keyValue);
             keyID = "letter" + keyValue;
-            console.log(keyID);
             document.getElementById("letter"+keyValue).classList.add("disabled");
         // }
-        // ~~~~~~ currently displays all the guessedLetters in an array. Not necessary later iff
-        // ~~~~~~~~~~~~~~~~~~ The classes of the displayed letters on the screen should be changed.
         document.getElementById("guessedLettersArray").innerHTML = guessedLettersArray;
         // console.log(guessedLettersArray)
     }
@@ -273,7 +265,6 @@ document.getElementById("inspectButton").addEventListener("click", inspect);
 // To allow the user to give up and try another pokemon pre-emptively
 function runAway(value) {
     if(isGuessingEnabled === true) {        
-    console.log(value)
     lives -= 1;
     newGame();
     document.getElementById("whatquestion").innerHTML = "You ran away... try again!"
