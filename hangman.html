@@ -61,7 +61,7 @@
         </div>
         <!-- This is the right side in two separate columns and rows -->
         <div class="col-3 p-0">
-            <button class="column menuitem btn btn-primary btn-block m-0 in-line disabled">
+            <button id="inspectButton" class="column menuitem btn btn-primary btn-block m-0 in-line disabled">
                 <!-- <div class="btn btn-primary"> -->
                     <element class="h3">Inspect</element>
                     <element class="menudetail">Get a better look</element>
@@ -73,11 +73,11 @@
             </button>
         </div>
         <div class="col-3 p-0">
-            <button class="column menuitem btn btn-primary btn-block m-0 in-line disabled">
+            <button id="optionsButton" class="column menuitem btn btn-primary btn-block m-0 in-line disabled">
                 <element class="h3">Options</element>
                 <element class="menudetail">Adjust settings</element>
             </button>
-            <button id="runButton" class="column menuitem btn btn-primary btn-block m-0 in-line">
+            <button id="runButton" class="column menuitem btn btn-primary btn-block m-0 in-line disabled">
                 <element id="rundisplay" class="h3">Run</element>
                 <element class="menudetail">Run and try again</element>
             </button>
@@ -87,8 +87,7 @@
 
 
     <!-- Create a section where you can click the letters to guess... trigger a keypress on a click of the button -->
-    <div id="guessingAlphabet" class="row p-1">
-        This is where the alphabet will be with dynamically created letters in a certain styled way
+    <div id="guessingAlphabet" class="row">
     </div>
 
 </div>

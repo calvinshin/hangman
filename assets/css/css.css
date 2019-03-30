@@ -2,6 +2,7 @@
 body{
     font-family: 'VT323', monospace;
     /* background-color: red; */
+    font-weight: none; 
 }
 
 div{
@@ -36,7 +37,7 @@ div{
 /* GuessingBattle id styles */
 #guessingBattle {
     /* Calculating height minus the border size */
-    height: calc(55vh - 2px);
+    height: calc(50vh - 2px);
     position: relative;
     box-sizing: border-box;
 }
@@ -92,8 +93,8 @@ div{
             }
             
             .champion{
-                /* No image */
-                display: none;
+                filter: grayscale(100%) brightness(0) blur(60px);
+                opacity: 0.8;  
             }
 
     #battleBottomLeft{
@@ -112,6 +113,10 @@ div{
         right: 0px;
         bottom: 0px;
         z-index: 1;
+        border-color: #007bff;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 10px 0px;
         /* height: 10vh; */
     }
 
@@ -133,9 +138,17 @@ div{
         }
     }
 
+.options{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -35%);
+    /* make it show on top */
+    z-index: 3;
+}
 
 #guessingMenu{
-    height: 30vh;
+    height: 27vh;
     /* box-sizing: border-box; */
     word-break: break-word;
     overflow-wrap: break-word;
@@ -152,7 +165,7 @@ div{
     }
 
     .menuitem {
-        height: calc(15vh - 5px);
+        height: calc(13.5vh - 5px);
         /* box-sizing: border-box; */
         /* padding: 0px; */
         margin: 0px;
@@ -161,7 +174,7 @@ div{
     }
 
 #guessingAlphabet{
-    height: 15vh;
+    height: 23vh;
     box-sizing: border-box;
     border-color: gray;
     border-width: 5px;
@@ -189,6 +202,14 @@ div{
     display: block;
 }
 
+/* .alphabetbutton {
+    font-size: medium;
+    height: 6vh;
+    width: 4vw;
+    margin: 2px !important;
+    text-align: center;
+} */
+
 @media (max-width: 500px) {
     .menudetail{
         display: none;
@@ -206,6 +227,20 @@ div{
     }
     h2 {
         font-size: larger;
+    }
+    /* .alphabetbutton {
+        max-height: 5vh;
+        margin: 0px !important;
+        /* border-radius: 0px; */
+    /* } */
+}
+ 
+@media (max-height: 600px) {
+    .alphabetbutton{
+        font-size: small;
+    }
+    .outerguessing{
+        padding: 0px !important;
     }
 }
 
@@ -230,4 +265,8 @@ div{
     #guessingAlphabet {
         height: 26vh;
     }
+    /* .alphabetbutton {
+        font-size: x-small;
+        padding-top: 0px;
+    } */
 }

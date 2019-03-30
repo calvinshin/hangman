@@ -1,13 +1,13 @@
 // Word related variables
 var unknownWord = "";
 var secretWord = "";
-var secretWordArray = Array();
-var guessedLettersArray = Array();
+var secretWordArray = [];
+var guessedLettersArray = [];
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~ OH GOD THERE IS AN ISSUE WITH CAPITALIZED LETTERS.
-var entireArray = ["pikachu", "rattata", "squirtle", "charmander", "mew"];
+var entireArray = ["absol","accelgor","aggron","archen","aurorus","banette","basculin","beartic","beautifly","bibarel","bisharp","blitzle","bonsly","bouffalant","braviary","camerupt","carracosta","castform","chandelure","charmander","chimchar","chingling","claydol","clefairy","cofagrigus","combee","corsola","cottonee","cradily","croagunk","delphox","dewgong","dewott","dialga","doduo","drifblim","drowzee","duosion","eelektross","elgyem","abomasnow","abra","aegislash","aerodactyl","alakazam","alomomola","altaria","amaura","ambipom","amoonguss","anorith","arbok","arcanine","arceus","archeops","aromatisse","aron","articuno","audino","avalugg","axew","azelf","azurill","bagon","baltoy","barbaracle","barboach","bastiodon","beedrill","beheeyem","beldum","bellsprout","bergmite","bidoof","binacle","blastoise","blaziken","blissey","boldore","braixen","breloom","bronzong","bronzor","budew","buizel","bulbasaur","buneary","bunnelby","burmy","butterfree","cacnea","cacturne","carbink","carnivine","carvanha","cascoon","caterpie","celebi","chansey","charizard","charmeleon","chatot","cherrim","cherubi","chesnaught","chespin","chimecho","cinccino","clauncher","clamperl","clawitzer","clefable","cloyster","cobalion","combusken","conkeldurr","corphish","cranidos","crawdaunt","cresselia","crustle","cryogonal","cubchoo","cubone","darkrai","darmanitan","darumaka","dedenne","deino","delcatty","delibird","deoxys","diancie","diggersby","diglett","ditto","dodrio","donphan","doublade","dragalge","dragonair","dragonite","drapion","dratini","drifloon","drilbur","druddigon","ducklett","dugtrio","durant","dusclops","dusknoir","duskull","dustox","dwebble","eelektrik","eevee","ekans","electabuzz","electivire","electrike","electrode","elekid","emboar","armaldo","deerling","emolga","empoleon","entei","escavalier","espurr","excadrill","exeggcute","exeggutor","exploud","farfetchd","fearow","feebas","fennekin","ferroseed","ferrothorn","filenames","finneon","flabebe","flareon","fletchinder", "mantyke","fletchling","floatzel","floette","florges","flygon","foongus","fraxure","frillish","froakie","frogadier","froslass","furfrou","gabite","gallade","galvantula","garbodor","garchomp","gardevoir","gastly","gastrodon","genesect","gengar","geodude","gible","gigalith","giratina","glaceon","glalie","glameow","gliscor","gloom","gogoat","golbat","goldeen","golduck","golem","golett","golurk","goodra","goomy","gorebyss","gothita","gothitelle","gothorita","gourgeist","graveler","greninja","grimer","grotle","groudon","grovyle","growlithe","grumpig","gulpin","gurdurr","gyarados","happiny","hariyama","haunter","hawlucha","haxorus","heatmor","heatran","heliolisk","helioptile","herdier","hippopotas","hippowdon","hitmonchan","hitmonlee","hitmontop","honchkrow","honedge","ho-oh","hoopa","horsea","houndoom","houndour","huntail","hydreigon","hypno","illumise","infernape","inkay","ivysaur","jellicent","jigglypuff","jirachi","jolteon","joltik","jynx","kabuto","kabutops","kadabra","kakuna","kangaskhan","karrablast","kecleon","keldeo","pumpkaboo","kingdra","kingler","kirlia","klang","klefki","klink","klinklang","koffing","krabby","kricketot","kricketune","krokorok","krookodile","kyogre","kyurem","lairon","lampent","landorus","lapras","larvesta","larvitar","latias","latios","leafeon","leavanny","lickilicky","lickitung","liepard","lileep","lilligant","lillipup","linoone","litleo","litwick","lombre","lopunny","lotad","loudred","lucario","ludicolo","lugia","lumineon","lunatone","luvdisc","luxio","luxray","machamp","machoke","machop","magby","magcargo","magikarp","magmar","magmortar","magnemite","magneton","magnezone","makuhita","malamar","mamoswine","manaphy","mandibuzz","manectric","mankey","mantine","shuppet","maractus","marowak","marshtomp","masquerain","mawile","medicham","meditite","meloetta","meloetta-aria","meowstic","meowstic-male","meowth","mesprit","metagross","metang","metapod","mew","mewtwo","mienfoo","mienshao","mightyena","milotic","miltank","mimejr","mime-jr","minccino","minun","mismagius","moltres","monferno","mothim","mr-mime","mudkip","muk","munchlax","munna","musharna","nidoking","nidoqueen","nidoranf","nidoran-f","nidoranm","nidoran-m","nidorina","nidorino","nincada","ninetales","ninjask","noibat","noivern","nosepass","numel","nuzleaf","octillery","oddish","omanyte","omastar","onix","oshawott","pachirisu","palkia","palpitoad","pancham","pangoro","panpour","pansage","pansear","paras","parasect","patrat","pawniard","pelipper","persian","petilil","phanpy","phantump","phione","pidgeot","pidgeotto","pidgey","pidove","pignite","pikachu","piloswine","pinsir","piplup","plusle","poliwag","poliwhirl","poliwrath","ponyta","poochyena","porygon","porygontwo","porygonz","primeape","prinplup","probopass","psyduck","vespiquen","pupitar","purrloin","purugly","pyroar","quilladin","raichu","raikou","ralts","rampardos","rapidash","raticate","rattata","rayquaza","regice","regigigas","regirock","registeel","relicanth","remoraid","reshiram","reuniclus","rhydon","rhyhorn","rhyperior","riolu","roggenrola","roselia","roserade","rotom","rufflet","sableye","salamence","samurott","sandile","sandshrew","sandslash","sawk","sawsbuck","scatterbug","sceptile","scolipede","scrafty","scraggy","scyther","seadra","seaking","sealeo","seedot","serperior","servine","sewaddle","sharpedo","shaymin","shedinja","shelgon","shellder","shellos","shelmet","shieldon","shiftry","shroomish","sigilyph","silcoon","simipour","simisage","skarmory","skiddo","skitty","skorupi","skrelp","skuntank","slakoth","sliggoo","slowpoke","smeargle","smoochum","snivy","snorlax","snorunt","solosis","solrock","spewpa","spheal","spinda","spoink","stantler","staravia","starly","starmie","staryu","stoutland","stunfisk","stunky","suicune","surskit","swablu","swadloon","swalot","swanna","swellow","swirlix","swoobat","taillow","talonflame","tangrowth","tauros","tentacruel","tepig","terrakion","throh","thundurus","timburr","togekiss","torkoal","tornadus-incarnate","tornadus","torterra","tranquill","treecko","trevenant","turtwig","tympole","tynamo","tyrunt","unfezant","ursaring","vanillish","vanillite","vanilluxe","vaporeon","venipede","venomoth","venonat","venusaur","vibrava","victini","victreebel","vileplume","volcanion","volcarona","voltorb","vullaby","vulpix","wailord","walrein","wartortle","watchog","weavile","weedle","weepinbell","whimsicott","whirlipede","whismur","wigglytuff","wingull","wormadam","wurmple","wynaut","xerneas","yamask","yanmega","yveltal","zapdos","zebstrika","zekrom","zigzagoon","zoroark","zorua","zubat","zygarde","seel","seismitoad","seviper","shinx","simisear","slaking","slowbro","slugma","slurpuff","snover","spearow","spiritomb","spritzee","squirtle","staraptor","swampert","swinub","sylveon","tangela","tentacool","tirtouga","torchic","toxicroak","trapinch","tropius","trubbish","tyranitar","tyrantrum","tyrogue","uxie","vigoroth","virizion","vivillon","volbeat","wailmer","weezing","whiscash","woobat","zangoose","zweilous"];
 var currentArray = entireArray;
 // var otherArray = ["test", "two"];
-var pokemonNumber = 0;
+var pokemonNumber = 6;
 
 // var onWindow is used to figure out which commands should be valid
     // onwWindow = "guessing" allows the keypresses to function
@@ -75,7 +75,8 @@ var numberCaught = 0;
 // Hard = blurred silhouette AKA .acetrainer
 // Master = nothing shown of image (blank) AKA .champion
 var difficultyArray = ["youngster", "trainer", "acetrainer", "champion"]
-var difficulty = "medium";
+var difficulty = "champion";
+var difficultyImage = difficulty;
 // ~~~~~~~~~~~~~~~~~~~~~~ need to create a list of caught pokemon.
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~ using keypress to change the class of all the things
@@ -99,9 +100,19 @@ function newGame() {
     isGuessingEnabled = true;
     guesses = 8;
     document.getElementById("guesses").innerHTML = guesses;
-    document.getElementById("whatquestion").innerHTML = "What will you do?"
+    document.getElementById("whatquestion").innerHTML = "What will you do?";
+    document.getElementById("pokemon").setAttribute("src", "assets/sprites/"+secretWord+".png");
+    console.log(difficulty)
+    document.getElementById("pokemon").classList.add(difficulty);
+    difficultyImage = difficulty;
+    for(i=0; i<alphabetArray.length; i++) {
+        document.getElementById("letter"+alphabetArray[i]).classList.remove("disabled");
+    }
+    document.getElementById("inspectButton").classList.remove("disabled");
+    document.getElementById("runButton").classList.remove("disabled");
     // console.log("isguessing in newgame" + isGuessingEnabled);
     play(bGM);
+    console.log("width+ " + document.getElementById("pokemon").naturalWidth)
 
 };
 
@@ -148,6 +159,7 @@ document.onkeydown = function(keypress) {
 }
 
 function guessing(keyValue) {
+    // Checks if you already guessed this letter or not. If it's not found, goes through the logic.
     if(guessedLettersArray.indexOf(keyValue) === -1) {
         // Checks for if the key is in the array
         // If you didn't find the letter... this happens
@@ -184,12 +196,13 @@ function guessing(keyValue) {
                     // console.log(unknownWord)
                 }
             }
-            // Update the value of the unknownWord on the document screen
+            // Checks to see if you won after updating the word
             document.getElementById("unknownWord").innerHTML = unknownWord.charAt(0).toUpperCase() + unknownWord.slice(1);
             if(unknownWord.indexOf("_") === -1) {
                 document.getElementById("winMessage").innerHTML = "You win!<br>Play again?";
                 document.getElementById("winMessage").classList.remove("hidden");
                 document.getElementById("winwindow").classList.remove("hidden");
+                document.getElementById("pokemon").classList.remove("trainer", "youngster", "acetrainer", "champion");
                 numberCaught += 1;
                 document.getElementById("caught").innerHTML = numberCaught;
                 pause(bGM);
@@ -213,30 +226,61 @@ function guessing(keyValue) {
             }
         }
         // After checking for the letter, the guessedLettersArray is appended
+        // Logic below could be fiex be changing guessedLettersArray = [] but the below is practice for if else logic
         // Checks if array is blank
-        if(guessedLettersArray.length === 0) {
-            guessedLettersArray = Array(keyValue);
-        }
+        // if(guessedLettersArray.length === 0) {
+        //     guessedLettersArray = Array(keyValue);
+        // }
         // adds new values if the array is not blank
-        else {
-            guessedLettersArray.push(keyValue)
-        }
+        // else {
+            guessedLettersArray.push(keyValue);
+            keyID = "letter" + keyValue;
+            console.log(keyID);
+            document.getElementById("letter"+keyValue).classList.add("disabled");
+        // }
         // ~~~~~~ currently displays all the guessedLetters in an array. Not necessary later iff
         // ~~~~~~~~~~~~~~~~~~ The classes of the displayed letters on the screen should be changed.
         document.getElementById("guessedLettersArray").innerHTML = guessedLettersArray;
         // console.log(guessedLettersArray)
     }
+    // The key was already pressed, so a notification is provided that the key was pressed. 
     else {
-        console.log("This character was already pressed!")
+        // console.log("This character was already pressed!")
         document.getElementById("whatquestion").innerHTML = "Already guessed " + keyValue + "!" 
     }
 }
 
-function runAway() {
+// Menu elements
+
+function inspect() {
+    if(isGuessingEnabled === true) {        
+        document.getElementById("pokemon").classList.remove(difficultyImage);
+        difficultyImage = difficultyArray[difficultyArray.indexOf(difficultyImage)-1]
+        document.getElementById("pokemon").classList.add(difficultyImage);
+    }
+}
+document.getElementById("inspectButton").addEventListener("click", inspect);
+
+// function options() {
+//     var optionsWindow = document.createElement("div");
+//     optionsWindow.className = "options jumbotron";
+//     optionsWindow.innerHTML = "Test"
+//     document.getElementById("guessingWindow").appendChild(optionsWindow);
+// }
+// document.getElementById("optionsButton").addEventListener("click", options);
+
+
+// To allow the user to give up and try another pokemon pre-emptively
+function runAway(value) {
+    if(isGuessingEnabled === true) {        
+    console.log(value)
     lives -= 1;
     newGame();
     document.getElementById("whatquestion").innerHTML = "You ran away... try again!"
+    }
 }
+
+document.getElementById("runButton").addEventListener("click", runAway);
 
 // Core of game elements:::
 // if onWindow is true, clicking enter, n, or the button leads to the next page
@@ -246,6 +290,28 @@ function runAway() {
 document.getElementById("winMessage").innerHTML = "Guess the Pokemon!<br>The Pokemon's name will show on the top left.";
 document.getElementById("unknownWord").innerHTML = unknownWord;
 
+var alphabetArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+console.log("testing")
+
+
+for (i=0; i<alphabetArray.length; i++) {
+// Create an external div for col-1
+// https://stackoverflow.com/questions/30616925/creating-26-alphabet-letter-buttons-with-the-for-loop-and-string-fromcharcode
+    var alphabetDiv = document.createElement("div");
+    alphabetDiv.className = "col-1 p-1 outerguessing";
+    // Create an internal div for elements and spacing
+    var alphabetDivTwo = document.createElement("div");
+    alphabetDivTwo.className = "btn btn-secondary alphabetbutton btn-block p-1 disabled";
+    alphabetDivTwo.setAttribute("letter", alphabetArray[i]);
+    alphabetDivTwo.setAttribute("id", "letter"+alphabetArray[i]);
+    alphabetDivTwo.onclick = function (e) {
+        guessing(this.getAttribute("letter"));
+    };
+        // ("onclick", "guessing("+alphabetArray[i]+".string)");
+    alphabetDivTwo.innerHTML = alphabetArray[i];
+    alphabetDiv.appendChild(alphabetDivTwo);
+    document.getElementById("guessingAlphabet").appendChild(alphabetDiv);
+}
+
 // Button on-click events
     // Guessing Menu events
-document.getElementById("runButton").addEventListener("click", runAway);
