@@ -16,10 +16,21 @@
 <div id="winwindow">
     <button id="newgame" class="btn-lg btn-primary btn-block" onclick="newGame()" >
         <element id="winMessage" class="">This should not be visible</element>
-    </button>
-
-    
+    </button>    
 </div>
+
+<div id="optionwindow" class="jumbotron bg-warning options hidden">
+    <!-- Content for the window -->
+    <div>
+        This is the optionwindow but there's nothing here right now. Check again later!
+    </div>
+    <!-- Close button for the window. Would work better if we could call this -->
+    <div class="closingwindow">
+        ×
+    </div>
+</div>
+
+
 <!-- Create a container for playing the game itself-->
 <div id="guessingWindow" class="container">
     <!-- Create a battlearea section based on wireframe -->
@@ -74,7 +85,7 @@
             </button>
         </div>
         <div class="col-3 p-0">
-            <button id="optionsButton" class="column menuitem btn btn-primary btn-block m-0 in-line disabled">
+            <button id="optionsButton" class="column menuitem btn btn-primary btn-block m-0 in-line">
                 <element class="h3">Options</element>
                 <element class="menudetail">Adjust settings</element>
             </button>

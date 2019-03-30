@@ -107,6 +107,7 @@ function newGame() {
     for(i=0; i<alphabetArray.length; i++) {
         document.getElementById("letter"+alphabetArray[i]).classList.remove("disabled");
     }
+    // Enabling all the buttons ~~~~~~~~~~~~~~ Need to do this for the other two buttons
     document.getElementById("inspectButton").classList.remove("disabled");
     document.getElementById("runButton").classList.remove("disabled");
     // console.log("isguessing in newgame" + isGuessingEnabled);
@@ -121,7 +122,7 @@ function arrayify(secretWord) {
     document.getElementById("guessedLettersArray").innerHTML = guessedLettersArray;
     // Core function of arrayify that creates an array from the secret word
     // Also creates the unknown word at the same time (for a single for loop)
-    secretWordArray = [secretWord[0]];
+    // secretWordArray = [secretWord[0]];
     unknownWord = "";
     for (i=0; i < secretWord.length; i++) {
         secretWordArray.push(secretWord[i]);
@@ -261,13 +262,17 @@ document.getElementById("inspectButton").addEventListener("click", inspect);
 // }
 // document.getElementById("optionsButton").addEventListener("click", options);
 
+function option() {
+    document.getElementById("optionwindow").classList.toggle("hidden")
+}
+document.getElementById("optionsButton").addEventListener("click", option)
 
 // To allow the user to give up and try another pokemon pre-emptively
 function runAway(value) {
     if(isGuessingEnabled === true) {        
-    lives -= 1;
-    newGame();
-    document.getElementById("whatquestion").innerHTML = "You ran away... try again!"
+        lives -= 1;
+        newGame();
+        document.getElementById("whatquestion").innerHTML = "You ran away... try again!"
     }
 }
 
@@ -282,7 +287,7 @@ document.getElementById("winMessage").innerHTML = "Guess the Pokemon!<br>The Pok
 document.getElementById("unknownWord").innerHTML = unknownWord;
 
 var alphabetArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-console.log("testing")
+// console.log("testing")
 
 
 for (i=0; i<alphabetArray.length; i++) {

@@ -147,6 +147,16 @@ div{
     z-index: 3;
 }
 
+.closingwindow{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+
 #guessingMenu{
     height: 27vh;
     /* box-sizing: border-box; */
