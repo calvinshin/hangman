@@ -14,15 +14,41 @@
 <!-- Should be dynamically creating these... I guess? though it'll be a difficult thing to create it with css styles too... -->
 <!-- But this is the win/newgame window -->
 <div id="winwindow">
-    <button id="newgame" class="btn-lg btn-primary btn-block" onclick="newGame()" >
+    <button id="newgame" class="btn-lg btn-success btn-block" onclick="newGame()" >
         <element id="winMessage" class="">This should not be visible</element>
     </button>    
 </div>
 
-<div id="optionwindow" class="jumbotron bg-warning options hidden">
+<div id="optionwindow" class="bg-warning options hidden">
     <!-- Content for the window -->
-    <div>
-        This is the optionwindow but there's nothing here right now. Check again later!
+    <h2 class="optionheader">Options</h2>
+    <div class="">
+        <br>
+    </div>
+    <div id="difficultysettings">
+        <h3 class="">Difficulty</h5>
+        <div id="diffyoungster" class="diffsettings btn btn-light" value="youngster">
+            Youngster
+        </div>
+        <div id="difftrainer" class="diffsettings btn btn-success" value="trainer">
+            Trainer
+        </div>
+        <div id="difface" class="diffsettings btn btn-light" value="acetrainer">
+            Ace Trainer
+        </div>
+        <div id="diffchampion" class="diffsettings btn btn-light" value="champion">
+            Champion
+        </div>
+    </div>
+    <br>
+    <div id="audiosettings">
+        <h3 class="">Audio</h3>
+        <div id="backgroundtoggle" class="audiotoggles btn btn-light">
+            BGM
+        </div>
+        <div id="soundeffecttoggle" class="audiotoggles btn btn-light">
+            SFX
+        </div>
     </div>
     <!-- Close button for the window. Would work better if we could call this -->
     <div class="closingwindow">
@@ -65,7 +91,7 @@
         <!-- This is the left side of the guessing menu -->
         <div class="col-6 p-0">
             <div class="m-1">
-                <H2 id="whatquestion"><br></H2>
+                <h2 id="whatquestion"><br></h2>
                 Guessed letters: 
                 <br>
                 <element id="guessedLettersArray">Guess some letters!</element>   
@@ -73,23 +99,23 @@
         </div>
         <!-- This is the right side in two separate columns and rows -->
         <div class="col-3 p-0">
-            <button id="inspectButton" class="column menuitem btn btn-primary btn-block m-0 in-line disabled">
+            <button id="inspectButton" class="column menuitem btn btn-outline-secondary btn-block m-0 in-line disabled">
                 <!-- <div class="btn btn-primary"> -->
                     <element class="h3">Inspect</element>
                     <element class="menudetail">Get a better look</element>
                 <!-- </div> -->
             </button>
-            <button class="column menuitem btn btn-primary btn-block m-0 in-line disabled">
+            <button class="column menuitem btn btn-outline-secondary btn-block m-0 in-line disabled">
                 <element class="h3">Bag</element>
                 <element class="menudetail">Reveal a letter</element>
             </button>
         </div>
         <div class="col-3 p-0">
-            <button id="optionsButton" class="column menuitem btn btn-primary btn-block m-0 in-line">
+            <button id="optionsButton" class="column menuitem btn btn-outline-secondary btn-block m-0 in-line">
                 <element class="h3">Options</element>
                 <element class="menudetail">Adjust settings</element>
             </button>
-            <button id="runButton" class="column menuitem btn btn-primary btn-block m-0 in-line disabled">
+            <button id="runButton" class="column menuitem btn btn-outline-secondary btn-block m-0 in-line disabled">
                 <element id="rundisplay" class="h3">Run</element>
                 <element class="menudetail">Run and try again</element>
             </button>

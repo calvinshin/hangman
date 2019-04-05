@@ -85,16 +85,19 @@ div{
             .trainer{
                 filter: grayscale(100%) brightness(0);
                 opacity: 0.8;    
+                /* transition: after 2s ease; */
             }
 
             .acetrainer{
                 filter: grayscale(100%) brightness(0) blur(8px);
                 opacity: 0.8;    
+                /* transition: all 2s ease; */
             }
             
             .champion{
                 filter: grayscale(100%) brightness(0) blur(60px);
                 opacity: 0.8;  
+                /* transition: all 2s ease; */
             }
 
     #battleBottomLeft{
@@ -138,24 +141,42 @@ div{
         }
     }
 
-.options{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -35%);
-    /* make it show on top */
-    z-index: 3;
+#optionwindow {
+    padding: 20px 50px 50px 50px;
+    text-align: center;
+    width: 60%;
 }
 
-.closingwindow{
-    position: absolute;
-    right: 10px;
-    top: 5px;
-    background-color: white;
-    width: 30px;
-    height: 30px;
-    margin: auto;
-}
+    .leftalign {
+        text-align: left;
+    }
+
+    .options {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        /* make it show on top */
+        z-index: 3;
+    }
+
+    .closingwindow {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        background-color: white;
+        border-radius: 2px;
+        padding: 2px 7px 0px 8px;
+    }
+
+    .diffsettings {
+        display: inline-block;
+        width: 100px;
+    }
+
+    .optionheader{
+        margin-bottom: 0px;
+    }
 
 #guessingMenu{
     height: 27vh;
@@ -181,6 +202,8 @@ div{
         margin: 0px;
         border-radius: 0px;
         text-align: left;
+        border: 0px;
+        color: black;
     }
 
 #guessingAlphabet{
