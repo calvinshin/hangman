@@ -84,6 +84,8 @@ function pause(sound) {
 // Game mechanic variables
 // wanted to create concept of multiple lives (before game is over)
 var lives = 3;
+var inspects = 9;
+var reveals = 6;
 // guesses for pokemon
 var guesses = 8;
 var numberCaught = 0;
@@ -127,9 +129,10 @@ function newGame() {
     for(i=0; i<alphabetArray.length; i++) {
         document.getElementById("letter"+alphabetArray[i]).classList.remove("disabled");
     }
-    // Enabling all the buttons ~~~~~~~~~~~~~~ Need to do this for the other two buttons
+    // Enabling all the buttons ~~~~~~~~~~~~~~ 
     document.getElementById("inspectButton").classList.remove("disabled");
     document.getElementById("runButton").classList.remove("disabled");
+    document.getElementById("bagButton").classList.remove("disabled");
     // console.log("isguessing in newgame" + isGuessingEnabled);
     play(bGM);
     // console.log("width+ " + document.getElementById("pokemon").naturalWidth)
@@ -275,13 +278,29 @@ function inspect() {
 }
 document.getElementById("inspectButton").addEventListener("click", inspect);
 
-// function options() {
-//     var optionsWindow = document.createElement("div");
-//     optionsWindow.className = "options jumbotron";
-//     optionsWindow.innerHTML = "Test"
-//     document.getElementById("guessingWindow").appendChild(optionsWindow);
-// }
-// document.getElementById("optionsButton").addEventListener("click", options);
+// Reveals a letter when clicking the bag function
+function bag() {
+    if(isGuessingEnabled === true) {
+        if(reveals > 0) {
+            var unknownLetters = secretWord;
+            var knownLetters = unknownWord.replace(new RegExp("_", 'g'), "");
+            for(var i = 0; i < knownLetters.length; i++) {
+                // unknownLetters now contains only the values not guessed yet
+                unknownLetters = unknownLetters.replace(new RegExp(knownLetters[i], 'g'), "")
+            }
+            // Create an array removed duplicates
+            var unknownSet = Array.from(new Set(Array.from(unknownLetters)));
+
+            // Create a value to guess
+            var bagValue = unknownSet[Math.floor(Math.random() * unknownSet.length)];
+
+            reveals -= 1;
+            // Call the guessing function to guess the value;
+            guessing(bagValue);
+        }
+    }
+}
+document.getElementById("bagButton").addEventListener("click", bag)
 
 function option() {
     document.getElementById("optionwindow").classList.toggle("hidden");
