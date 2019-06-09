@@ -123,9 +123,9 @@ function newGame() {
     guesses = 8;
     document.getElementById("guesses").innerHTML = guesses;
     document.getElementById("whatquestion").innerHTML = "What will you do?";
-    document.getElementById("pokemon").setAttribute("src", "assets/sprites/"+secretWord+".png");
     // console.log(difficulty)
     document.getElementById("pokemon").classList.remove(difficultyArray[0],difficultyArray[1],difficultyArray[2],difficultyArray[3]);
+    document.getElementById("pokemon").setAttribute("src", "assets/sprites/"+secretWord+".png");
     document.getElementById("pokemon").classList.add(difficulty);
     difficultyImage = difficulty;
     for(i=0; i<alphabetArray.length; i++) {
