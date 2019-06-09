@@ -8,9 +8,12 @@ var secretWord = "";
 var secretWordArray = [];
 var guessedLettersArray = [];
 var entireArray = ["absol","accelgor","aggron","archen","aurorus","banette","basculin","beartic","beautifly","bibarel","bisharp","blitzle","bonsly","bouffalant","braviary","camerupt","carracosta","castform","chandelure","charmander","chimchar","chingling","claydol","clefairy","cofagrigus","combee","corsola","cottonee","cradily","croagunk","delphox","dewgong","dewott","dialga","doduo","drifblim","drowzee","duosion","eelektross","elgyem","abomasnow","abra","aegislash","aerodactyl","alakazam","alomomola","altaria","amaura","ambipom","amoonguss","anorith","arbok","arcanine","arceus","archeops","aromatisse","aron","articuno","audino","avalugg","axew","azelf","azurill","bagon","baltoy","barbaracle","barboach","bastiodon","beedrill","beheeyem","beldum","bellsprout","bergmite","bidoof","binacle","blastoise","blaziken","blissey","boldore","braixen","breloom","bronzong","bronzor","budew","buizel","bulbasaur","buneary","bunnelby","burmy","butterfree","cacnea","cacturne","carbink","carnivine","carvanha","cascoon","caterpie","celebi","chansey","charizard","charmeleon","chatot","cherrim","cherubi","chesnaught","chespin","chimecho","cinccino","clauncher","clamperl","clawitzer","clefable","cloyster","cobalion","combusken","conkeldurr","corphish","cranidos","crawdaunt","cresselia","crustle","cryogonal","cubchoo","cubone","darkrai","darmanitan","darumaka","dedenne","deino","delcatty","delibird","deoxys","diancie","diggersby","diglett","ditto","dodrio","donphan","doublade","dragalge","dragonair","dragonite","drapion","dratini","drifloon","drilbur","druddigon","ducklett","dugtrio","durant","dusclops","dusknoir","duskull","dustox","dwebble","eelektrik","eevee","ekans","electabuzz","electivire","electrike","electrode","elekid","emboar","armaldo","deerling","emolga","empoleon","entei","escavalier","espurr","excadrill","exeggcute","exeggutor","exploud","farfetchd","fearow","feebas","fennekin","ferroseed","ferrothorn","filenames","finneon","flabebe","flareon","fletchinder", "mantyke","fletchling","floatzel","floette","florges","flygon","foongus","fraxure","frillish","froakie","frogadier","froslass","furfrou","gabite","gallade","galvantula","garbodor","garchomp","gardevoir","gastly","gastrodon","genesect","gengar","geodude","gible","gigalith","giratina","glaceon","glalie","glameow","gliscor","gloom","gogoat","golbat","goldeen","golduck","golem","golett","golurk","goodra","goomy","gorebyss","gothita","gothitelle","gothorita","gourgeist","graveler","greninja","grimer","grotle","groudon","grovyle","growlithe","grumpig","gulpin","gurdurr","gyarados","happiny","hariyama","haunter","hawlucha","haxorus","heatmor","heatran","heliolisk","helioptile","herdier","hippopotas","hippowdon","hitmonchan","hitmonlee","hitmontop","honchkrow","honedge","hooh","hoopa","horsea","houndoom","houndour","huntail","hydreigon","hypno","illumise","infernape","inkay","ivysaur","jellicent","jigglypuff","jirachi","jolteon","joltik","jynx","kabuto","kabutops","kadabra","kakuna","kangaskhan","karrablast","kecleon","keldeo","pumpkaboo","kingdra","kingler","kirlia","klang","klefki","klink","klinklang","koffing","krabby","kricketot","kricketune","krokorok","krookodile","kyogre","kyurem","lairon","lampent","landorus","lapras","larvesta","larvitar","latias","latios","leafeon","leavanny","lickilicky","lickitung","liepard","lileep","lilligant","lillipup","linoone","litleo","litwick","lombre","lopunny","lotad","loudred","lucario","ludicolo","lugia","lumineon","lunatone","luvdisc","luxio","luxray","machamp","machoke","machop","magby","magcargo","magikarp","magmar","magmortar","magnemite","magneton","magnezone","makuhita","malamar","mamoswine","manaphy","mandibuzz","manectric","mankey","mantine","shuppet","maractus","marowak","marshtomp","masquerain","mawile","medicham","meditite","meloetta","meowstic","meowth","mesprit","metagross","metang","metapod","mew","mewtwo","mienfoo","mienshao","mightyena","milotic","miltank","mimejr","minccino","minun","mismagius","moltres","monferno","mothim","mrmime","mudkip","muk","munchlax","munna","musharna","nidoking","nidoqueen","nidoranf","nidoranm","nidorina","nidorino","nincada","ninetales","ninjask","noibat","noivern","nosepass","numel","nuzleaf","octillery","oddish","omanyte","omastar","onix","oshawott","pachirisu","palkia","palpitoad","pancham","pangoro","panpour","pansage","pansear","paras","parasect","patrat","pawniard","pelipper","persian","petilil","phanpy","phantump","phione","pidgeot","pidgeotto","pidgey","pidove","pignite","pikachu","piloswine","pinsir","piplup","plusle","poliwag","poliwhirl","poliwrath","ponyta","poochyena","porygon","porygontwo","porygonz","primeape","prinplup","probopass","psyduck","vespiquen","pupitar","purrloin","purugly","pyroar","quilladin","raichu","raikou","ralts","rampardos","rapidash","raticate","rattata","rayquaza","regice","regigigas","regirock","registeel","relicanth","remoraid","reshiram","reuniclus","rhydon","rhyhorn","rhyperior","riolu","roggenrola","roselia","roserade","rotom","rufflet","sableye","salamence","samurott","sandile","sandshrew","sandslash","sawk","sawsbuck","scatterbug","sceptile","scolipede","scrafty","scraggy","scyther","seadra","seaking","sealeo","seedot","serperior","servine","sewaddle","sharpedo","shaymin","shedinja","shelgon","shellder","shellos","shelmet","shieldon","shiftry","shroomish","sigilyph","silcoon","simipour","simisage","skarmory","skiddo","skitty","skorupi","skrelp","skuntank","slakoth","sliggoo","slowpoke","smeargle","smoochum","snivy","snorlax","snorunt","solosis","solrock","spewpa","spheal","spinda","spoink","stantler","staravia","starly","starmie","staryu","stoutland","stunfisk","stunky","suicune","surskit","swablu","swadloon","swalot","swanna","swellow","swirlix","swoobat","taillow","talonflame","tangrowth","tauros","tentacruel","tepig","terrakion","throh","thundurus","timburr","togekiss","torkoal","tornadus","torterra","tranquill","treecko","trevenant","turtwig","tympole","tynamo","tyrunt","unfezant","ursaring","vanillish","vanillite","vanilluxe","vaporeon","venipede","venomoth","venonat","venusaur","vibrava","victini","victreebel","vileplume","volcanion","volcarona","voltorb","vullaby","vulpix","wailord","walrein","wartortle","watchog","weavile","weedle","weepinbell","whimsicott","whirlipede","whismur","wigglytuff","wingull","wormadam","wurmple","wynaut","xerneas","yamask","yanmega","yveltal","zapdos","zebstrika","zekrom","zigzagoon","zoroark","zorua","zubat","zygarde","seel","seismitoad","seviper","shinx","simisear","slaking","slowbro","slugma","slurpuff","snover","spearow","spiritomb","spritzee","squirtle","staraptor","swampert","swinub","sylveon","tangela","tentacool","tirtouga","torchic","toxicroak","trapinch","tropius","trubbish","tyranitar","tyrantrum","tyrogue","uxie","vigoroth","virizion","vivillon","volbeat","wailmer","weezing","whiscash","woobat","zangoose","zweilous"];
+var pokeballs = ['Bag_Beast_Ball_Sprite.png','Bag_Cherish_Ball_Sprite.png','Bag_Dive_Ball_Sprite.png','Bag_Dream_Ball_Sprite.png','Bag_Dusk_Ball_Sprite.png','Bag_Fast_Ball_Sprite.png','Bag_Friend_Ball_Sprite.png','Bag_Great_Ball_Sprite.png','Bag_Heal_Ball_Sprite.png','Bag_Heavy_Ball_Sprite.png','Bag_Level_Ball_Sprite.png','Bag_Love_Ball_Sprite.png','Bag_Lure_Ball_IV_Sprite.png','Bag_Lure_Ball_Sprite.png','Bag_Luxury_Ball_Sprite.png','Bag_Master_Ball_Sprite.png','Bag_Moon_Ball_Sprite.png','Bag_Nest_Ball_Sprite.png','Bag_Net_Ball_Sprite.png','Bag_Park_Ball_IV_Sprite.png','Bag_Park_Ball_Sprite.png','Bag_Poké_Ball_Sprite.png','Bag_Premier_Ball_Sprite.png','Bag_Quick_Ball_Sprite.png','Bag_Repeat_Ball_Sprite.png','Bag_Safari_Ball_Sprite.png','Bag_Sport_Ball_Sprite.png','Bag_Timer_Ball_Sprite.png','Bag_Ultra_Ball_Sprite.png','Bag_Poké_Ball_Sprite.png', 'Bag_Poké_Ball_Sprite.png', 'Bag_Poké_Ball_Sprite.png', 'Bag_Poké_Ball_Sprite.png', 'Bag_Poké_Ball_Sprite.png', 'Bag_Poké_Ball_Sprite.png', 'Bag_Poké_Ball_Sprite.png', 'Bag_Poké_Ball_Sprite.png', 'Bag_Poké_Ball_Sprite.png', 'Bag_Poké_Ball_Sprite.png', 'Bag_Poké_Ball_Sprite.png', 'Bag_Poké_Ball_Sprite.png', 'Bag_Poké_Ball_Sprite.png', 'Bag_Poké_Ball_Sprite.png', 'Bag_Poké_Ball_Sprite.png', 'Bag_Poké_Ball_Sprite.png', 'Bag_Great_Ball_Sprite.png', 'Bag_Great_Ball_Sprite.png', 'Bag_Great_Ball_Sprite.png', 'Bag_Great_Ball_Sprite.png', 'Bag_Great_Ball_Sprite.png', 'Bag_Great_Ball_Sprite.png', 'Bag_Great_Ball_Sprite.png', 'Bag_Ultra_Ball_Sprite.png', 'Bag_Ultra_Ball_Sprite.png', 'Bag_Ultra_Ball_Sprite.png']
 var currentArray = entireArray;
+
+var pokeballArray = ['Bag_Poké_Ball_Sprite.png', 'Bag_Poké_Ball_Sprite.png', 'Bag_Poké_Ball_Sprite.png'];
 // var otherArray = ["test", "two"];
-var pokemonNumber = 6;
+// var pokemonNumber = 6;
 
 // var onWindow is used to figure out which commands should be valid
     // onwWindow = "guessing" allows the keypresses to function
@@ -59,7 +62,6 @@ function play(sound) {
     // if (muteBGM === false) {
     //     sound.play()
     // }
-    console.log(sound.volume)
 }
 
 function pause(sound) {
@@ -133,15 +135,21 @@ function newGame() {
     document.getElementById("inspectButton").classList.remove("disabled");
     document.getElementById("runButton").classList.remove("disabled");
     document.getElementById("bagButton").classList.remove("disabled");
+
+    document.getElementById("bagquantity").innerText = "x" + reveals
+    document.getElementById("inspectquantity").innerText = "x" + inspects;
     // console.log("isguessing in newgame" + isGuessingEnabled);
     play(bGM);
     // console.log("width+ " + document.getElementById("pokemon").naturalWidth)
 
+    // Display the ballss at the start of the game. 
+    ballDisplay();
 };
 
 function arrayify(secretWord) {
     // Clear guessedLettersArray
     guessedLettersArray = Array();
+    secretWordArray = [];
     document.getElementById("guessedLettersArray").innerHTML = guessedLettersArray;
     // Core function of arrayify that creates an array from the secret word
     // Also creates the unknown word at the same time (for a single for loop)
@@ -189,14 +197,14 @@ function guessing(keyValue) {
         if(secretWordArray.indexOf(keyValue) === -1) {
             // console.log("This character was not found!")
             play(missedSound)
-            guesses --;
+            guesses -= 1;
             document.getElementById("guesses").innerHTML = guesses;
             document.getElementById("whatquestion").innerHTML = "There's no " + keyValue + "!"
             if(guesses === 0) {
+                ballRemove();
                 pause(bGM);
                 play(runSound);
                 isGuessingEnabled = false;
-                lives -= 1;
                 document.getElementById("winMessage").innerHTML = "You didn't catch the Pokemon.<br>Play again?";
                 document.getElementById("winMessage").classList.remove("hidden");
                 document.getElementById("winwindow").classList.remove("hidden");
@@ -222,9 +230,11 @@ function guessing(keyValue) {
             document.getElementById("unknownWord").innerHTML = unknownWord.charAt(0).toUpperCase() + unknownWord.slice(1);
             if(unknownWord.indexOf("_") === -1) {
                 document.getElementById("winMessage").innerHTML = "You win!<br>Play again?";
+                ballAdd();
                 document.getElementById("winMessage").classList.remove("hidden");
                 document.getElementById("winwindow").classList.remove("hidden");
                 // document.getElementById("pokemon").classList.add("trainer");
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ IMAGE AND REMOVING THE classlist
                 document.getElementById("pokemon").classList.remove("trainer", "youngster", "acetrainer", "champion");
                 numberCaught += 1;
                 document.getElementById("caught").innerHTML = numberCaught;
@@ -270,10 +280,15 @@ function guessing(keyValue) {
 // Menu elements
 
 function inspect() {
-    if(isGuessingEnabled === true) {        
-        document.getElementById("pokemon").classList.remove(difficultyImage);
-        difficultyImage = difficultyArray[difficultyArray.indexOf(difficultyImage)-1]
-        document.getElementById("pokemon").classList.add(difficultyImage);
+    if(isGuessingEnabled === true) {
+        if(inspects > 0) {
+            document.getElementById("pokemon").classList.remove(difficultyImage);
+            difficultyImage = difficultyArray[difficultyArray.indexOf(difficultyImage)-1]
+            document.getElementById("pokemon").classList.add(difficultyImage);
+    
+            inspects -= 1;
+            document.getElementById("inspectquantity").innerText = "x" + inspects;    
+        }        
     }
 }
 document.getElementById("inspectButton").addEventListener("click", inspect);
@@ -295,6 +310,7 @@ function bag() {
             var bagValue = unknownSet[Math.floor(Math.random() * unknownSet.length)];
 
             reveals -= 1;
+            document.getElementById("bagquantity").innerText = "x" + reveals
             // Call the guessing function to guess the value;
             guessing(bagValue);
         }
@@ -361,7 +377,7 @@ for(i=0; i<audioArray.length; i++) {
 
 
 // Game Start
-document.getElementById("winMessage").innerHTML = "Guess the Pokemon!<br>The Pokemon's name will show on the top left.";
+document.getElementById("winMessage").innerHTML = "Guess the Pokemon!<br>The Pokemon's name is on the top left.";
 document.getElementById("unknownWord").innerHTML = unknownWord;
 
 // when using classes, you have to create a for loop or specify which instance of the class triggers the function
@@ -395,6 +411,39 @@ for (i=0; i<alphabetArray.length; i++) {
     alphabetDivTwo.innerHTML = alphabetArray[i];
     alphabetDiv.appendChild(alphabetDivTwo);
     document.getElementById("guessingAlphabet").appendChild(alphabetDiv);
+}
+
+// function for adding a pokemon (lives)
+// function for removing a pokemon (lives)
+// function for setting lives to the number of pokemon
+
+function ballAdd() {
+    // Check the array, if it's less than 6, add a pokemon
+    if(pokeballArray.length < 6) {
+        // Add a random pokeball image
+        pokeballArray.push(pokeballs[Math.floor(Math.random() * pokeballs.length)]);
+    
+        // Update number of lives
+        lives += 1;
+    }
+
+    // Update the display afterwards
+    ballDisplay();
+}
+
+function ballRemove() {
+    pokeballArray.shift();
+}
+
+function ballDisplay() {
+    for(var i = 0; i < 6; i++) {
+        if(i < pokeballArray.length) {
+            document.getElementById("ball" + i).setAttribute("src", "assets/pokeballs/" + pokeballArray[i]);
+        }
+        else {
+            document.getElementById("ball" + i).setAttribute("src", "assets/pokeballs/blank.png")
+        }
+    }
 }
 
 // Button on-click events

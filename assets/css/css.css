@@ -111,6 +111,20 @@ div{
             max-width: 200px;
         }
         
+    #pokeballRow {
+        position: absolute;
+        right: 0;
+        bottom: 60px;
+    }
+
+        .pokeball {
+            /* width: 20px;
+            height: 20px; */
+            margin: 0px;
+            border: 0px;
+            float: left;
+        }
+
     #battleBottomRight{
         position: absolute;
         right: 0px;

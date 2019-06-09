@@ -74,6 +74,14 @@
         <div id="battleBottomLeft">
             <img src="assets/otherimages/RS_May_Back.png" id="player">
         </div>
+        <div id="pokeballRow">
+            <img src="assets/pokeballs/blank.png" class="pokeball" id="ball0">
+            <img src="assets/pokeballs/blank.png" class="pokeball" id="ball1">
+            <img src="assets/pokeballs/blank.png" class="pokeball" id="ball2">
+            <img src="assets/pokeballs/blank.png" class="pokeball" id="ball3">
+            <img src="assets/pokeballs/blank.png" class="pokeball" id="ball4">
+            <img src="assets/pokeballs/blank.png" class="pokeball" id="ball5">
+        </div>
         <div id="battleBottomRight" class="col-5">
             Difficulty: <element id="difficulty">Ace Trainer</element>
             <br>
@@ -101,12 +109,12 @@
         <div class="col-3 p-0">
             <button id="inspectButton" class="column menuitem btn btn-outline-secondary btn-block m-0 in-line disabled">
                 <!-- <div class="btn btn-primary"> -->
-                    <element class="h3">Inspect</element>
+                    <element class="h3">Inspect <element id="inspectquantity"></element></element>
                     <element class="menudetail">Get a better look</element>
                 <!-- </div> -->
             </button>
             <button id="bagButton" class="column menuitem btn btn-outline-secondary btn-block m-0 in-line disabled">
-                <element class="h3">Bag</element>
+                <element class="h3">Bag <element id="bagquantity"></element></element>
                 <element class="menudetail">Reveal a letter</element>
             </button>
         </div>
