@@ -441,7 +441,7 @@ function ballDisplay() {
             document.getElementById("ball" + i).setAttribute("src", "assets/pokeballs/" + pokeballArray[i]);
         }
         else {
-            document.getElementById("ball" + i).setAttribute("src", "assets/pokeballs/blank.png")
+            document.getElementById("ball" + i).setAttribute("src", "assets/pokeballs/Blank.png")
         }
     }
 }
